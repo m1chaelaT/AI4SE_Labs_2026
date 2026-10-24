@@ -1,0 +1,31 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	load(load)
+	extract(extract)
+	merge(merge)
+	check_conflicts(check_conflicts)
+	prioritize(prioritize)
+	validate(validate)
+	review(review)
+	revise(revise)
+	render(render)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> load;
+	check_conflicts --> prioritize;
+	extract --> merge;
+	load --> extract;
+	merge --> check_conflicts;
+	prioritize --> validate;
+	review -. &nbsp;finish&nbsp; .-> render;
+	review -.-> revise;
+	revise --> validate;
+	validate --> review;
+	render --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
