@@ -1,0 +1,8 @@
+{
+  "backend": "lsa",
+  "model": "tfidf-svd-256",
+  "dim": 256,
+  "n_chunks": 798,
+  "normalised": true,
+  "created": "2026-11-15T17:45:38+00:00"
+}

@@ -1,0 +1,5 @@
+# API key - never commit
+.env
+# local copy of the original stub files (restore with --reset)
+Task_5/original_backup/
+__pycache__/

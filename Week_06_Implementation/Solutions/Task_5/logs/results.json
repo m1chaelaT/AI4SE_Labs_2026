@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "time": "2026-11-15T19:24:34",
+    "model": "gpt-5-mini",
+    "n": 5,
+    "store": "minilm",
+    "reasoning_effort": "low"
+  },
+  "tokens": {
+    "prompt_tokens": 7373,
+    "completion_tokens": 2340,
+    "reasoning_tokens": 1600,
+    "total_tokens": 9713,
+    "calls": 10
+  },
+  "comparison": {
+    "before": {
+      "total": 481,
+      "ok": 429,
+      "FAIL": 35,
+      "ERROR": 17,
+      "skipped": 0
+    },
+    "after": {
+      "total": 481,
+      "ok": 467,
+      "FAIL": 1,
+      "ERROR": 13,
+      "skipped": 0
+    },
+    "fixed": [
+      "tests.test_enums.OrderStatusTests.test_cancelled_is_terminal",
+      "tests.test_enums.OrderStatusTests.test_new_is_not_terminal",
+      "tests.test_enums.OrderStatusTests.test_reserved_is_not_terminal",
+      "tests.test_enums.OrderStatusTests.test_shipped_is_terminal",
+      "tests.test_events.EventBusContainsTests.test_contains_true_with_handler",
+      "tests.test_events.EventBusSubscribeTests.test_subscribe_registers_handler",
+      "tests.test_inventory.InventoryLedgerContainsLenIterTests.test_contains_normalized_present",
+      "tests.test_inventory.WarehouseTests.test_stock_report_empty",
+      "tests.test_inventory.WarehouseTests.test_stock_report_lists_available",
+      "tests.test_models.CustomerTests.test_can_afford_accounts_for_existing_balance",
+      "tests.test_models.CustomerTests.test_can_afford_non_money_rejected",
+      "tests.test_models.CustomerTests.test_can_afford_true_within_limit",
+      "tests.test_models.CustomerTests.test_charge_exactly_to_limit_allowed",
+      "tests.test_models.CustomerTests.test_charge_increases_balance",
+      "tests.test_models.CustomerTests.test_charge_non_money_propagates_type_error",
+      "tests.test_models.MoneyMiscTests.test_bool_false_for_zero",
+      "tests.test_models.MoneyMiscTests.test_bool_true_for_nonzero",
+      "tests.test_orders.OrderAddItemTests.test_add_after_advance_rejected",
+      "tests.test_orders.OrderAddItemTests.test_add_appends_new_sku",
+      "tests.test_orders.OrderAddItemTests.test_add_same_sku_merges_quantity",
+      "tests.test_orders.OrderAdvanceTests.test_cancel_from_new",
+      "tests.test_orders.OrderAdvanceTests.test_cancel_from_reserved",
+      "tests.test_orders.OrderAdvanceTests.test_happy_path_to_shipped",
+      "tests.test_orders.OrderBuilderTests.test_build_merges_duplicate_skus",
+      "tests.test_orders.OrderBuilderTests.test_build_twice_creates_independent_orders",
+      "tests.test_orders.OrderConstructionTests.test_initial_state",
+      "tests.test_orders.OrderContainerTests.test_len",
+      "tests.test_orders.OrderEqualityTests.test_repr_includes_status",
+      "tests.test_orders.OrderLogTests.test_by_status_filters",
+      "tests.test_orders.OrderLogTests.test_by_status_is_lazy_generator",
+      "tests.test_orders.OrderStateMachineTests.test_transition_returns_target_when_legal",
+      "tests.test_pricing.BulkDiscountPriceTests.test_below_threshold_returns_base_total",
+      "tests.test_pricing.BulkDiscountPriceTests.test_empty_items_below_threshold",
+      "tests.test_pricing.BulkDiscountPriceTests.test_zero_percent_returns_base_even_above_threshold",
+      "tests.test_simulation.BuildDefaultWarehouseTests.test_returns_warehouse_with_three_skus_each_20",
+      "tests.test_simulation.SimulationStepTests.test_cancel_path_releases_reservation",
+      "tests.test_simulation.SimulationStepTests.test_order_line_has_unit_price_1000_and_quantity_1_to_3",
+      "tests.test_simulation.SimulationStepTests.test_same_seed_is_reproducible",
+      "tests.test_simulation.SimulationStepTests.test_shipped_path_publishes_and_adds_revenue",
+      "tests.test_simulation.SimulationStepTests.test_step_returns_order_and_accounts_for_it"
+    ],
+    "newly_failing": [
+      "tests.test_orders.OrderLogTests.test_by_status_non_status_raises_on_first_next",
+      "tests.test_pricing.BulkDiscountPriceTests.test_call_matches_price"
+    ],
+    "still_failing": [
+      "tests.test_inventory.InventoryLedgerContainsLenIterTests.test_contains_present_even_if_zero_on_hand_after_commit",
+      "tests.test_orders.OrderAdvanceTests.test_advance_from_terminal_raises",
+      "tests.test_orders.OrderAdvanceTests.test_advance_to_same_status_raises",
+      "tests.test_orders.OrderAdvanceTests.test_illegal_advance_raises_and_keeps_status",
+      "tests.test_orders.OrderStateMachineTests.test_call_is_alias_for_transition",
+      "tests.test_orders.OrderStateMachineTests.test_transition_illegal_raises",
+      "tests.test_orders.OrderTotalTests.test_total_reflects_merged_quantities_for_bulk_discount",
+      "tests.test_pricing.BulkDiscountPriceTests.test_at_threshold_applies_discount",
+      "tests.test_pricing.BulkDiscountPriceTests.test_discount_uses_floor_division",
+      "tests.test_pricing.BulkDiscountPriceTests.test_full_discount_yields_zero",
+      "tests.test_pricing.BulkDiscountPriceTests.test_quantity_summed_across_lines",
+      "tests.test_pricing.BulkDiscountPriceTests.test_wraps_base_with_tax"
+    ]
+  },
+  "tasks": [
+    {
+      "task": "OrderStatus.is_terminal",
+      "file": "playground/playground/enums.py",
+      "chunks": [
+        [
+          0.81,
+          "playground/playground/enums.py::OrderStatus"
+        ],
+        [
+          0.698,
+          "playground/tests/test_enums.py::OrderStatusTests.test_cancelled_is_terminal"
+        ],
+        [
+          0.694,
+          "playground/playground/orders.py::Order.advance"
+        ],
+        [
+          0.687,
+          "playground/tests/test_enums.py::OrderStatusTests.test_new_is_not_terminal"
+        ],
+        [
+          0.672,
+          "playground/playground/orders.py::Order.status"
+        ]
+      ],
+      "prompt_chars": 2336,
+      "calls": [
+        {
+          "prompt_tokens": 639,
+          "completion_tokens": 178,
+          "reasoning_tokens": 128,
+          "total_tokens": 817,
+          "seconds": 3.77
+        }
+      ],
+      "status": "written",
+      "code": "@property\ndef is_terminal(self) -> bool:\n    \"\"\"True when the status ends further transitions.\"\"\"\n    return self in (OrderStatus.CANCELLED, OrderStatus.SHIPPED)",
+      "attempts": 1
+    },
+    {
+      "task": "InventoryLedger.__contains__",
+      "file": "playground/playground/inventory.py",
+      "chunks": [
+        [
+          0.844,
+          "playground/playground/inventory.py::InventoryLedger.available"
+        ],
+        [
+          0.787,
+          "playground/playground/inventory.py::InventoryLedger.__iter__"
+        ],
+        [
+          0.787,
+          "playground/playground/inventory.py::InventoryLedger._require_sku"
+        ],
+        [
+          0.769,
+          "playground/playground/inventory.py::InventoryLedger.__len__"
+        ],
+        [
+          0.768,
+          "playground/playground/inventory.py::InventoryLedger.release"
+        ]
+      ],
+      "prompt_chars": 2951,
+      "calls": [
+        {
+          "prompt_tokens": 800,
+          "completion_tokens": 290,
+          "reasoning_tokens": 192,
+          "total_tokens": 1090,
+          "seconds": 3.93
+        }
+      ],
+      "status": "written",
+      "code": "def __contains__(self, sku: object) -> bool:\n    \"\"\"Return whether ``sku`` normalises to a SKU with positive on-hand stock.\"\"\"\n    try:\n        sku_norm = normalize_sku(sku)\n    except Exception:\n        return False\n    if sku_norm not in self._product_repo:\n        return False\n    return self._on_hand.get(sku_norm, 0) > 0",
+      "attempts": 1
+    },
+    {
+      "task": "Warehouse.stock_report",
+      "file": "playground/playground/inventory.py",
+      "chunks": [
+        [
+          0.758,
+          "playground/playground/inventory.py::Warehouse.receive"
+        ],
+        [
+          0.713,
+          "playground/playground/inventory.py::Warehouse"
+        ],
+        [
+          0.709,
+          "playground/playground/inventory.py::inventory"
+        ],
+        [
+          0.699,
+          "playground/playground/inventory.py::Warehouse.__repr__"
+        ],
+        [
+          0.68,
+          "playground/playground/inventory.py::InventoryLedger.available"
+        ]
+      ],
+      "prompt_chars": 2780,
+      "calls": [
+        {
+          "prompt_tokens": 753,
+          "completion_tokens": 358,
+          "reasoning_tokens": 256,
+          "total_tokens": 1111,
+          "seconds": 4.8
+        }
+      ],
+      "status": "written",
+      "code": "def stock_report(self) -> Dict[str, int]:\n    \"\"\"Return a mapping of SKU to available quantity.\"\"\"\n    ledger = self._ledger\n    # collect all SKUs that appear either on-hand or reserved\n    skus = set(getattr(ledger, \"_on_hand\", {}).keys()) | set(getattr(ledger, \"_reserved\", {}).keys())\n    return {sku: ledger.available(sku) for sku in skus}",
+      "attempts": 1
+    },
+    {
+      "task": "OrderStateMachine.transition",
+      "file": "playground/playground/orders.py",
+      "chunks": [
+        [
+          0.878,
+          "playground/playground/orders.py::OrderStateMachine.can_transition"
+        ],
+        [
+          0.813,
+          "playground/playground/orders.py::Order.advance"
+        ],
+        [
+          0.773,
+          "playground/playground/orders.py::OrderStateMachine.__call__"
+        ],
+        [
+          0.75,
+          "playground/playground/orders.py::OrderStateMachine"
+        ],
+        [
+          0.733,
+          "playground/playground/orders.py::OrderStateMachine.allowed_from"
+        ]
+      ],
+      "prompt_chars": 3345,
+      "calls": [
+        {
+          "prompt_tokens": 854,
+          "completion_tokens": 307,
+          "reasoning_tokens": 192,
+          "total_tokens": 1161,
+          "seconds": 3.63
+        }
+      ],
+      "status": "written",
+      "code": "def transition(self, source: OrderStatus, target: OrderStatus) -> OrderStatus:\n    \"\"\"Return ``target`` if the transition is allowed, else raise.\"\"\"\n    if not isinstance(source, OrderStatus):\n        raise TypeError(\"source must be OrderStatus\")\n    if not isinstance(target, OrderStatus):\n        raise TypeError(\"target must be OrderStatus\")\n    if self.can_transition(source, target):\n        return target\n    raise ValueError(f\"cannot transition from {source} to {target}\")",
+      "attempts": 1
+    },
+    {
+      "task": "OrderLog.by_status",
+      "file": "playground/playground/orders.py",
+      "chunks": [
+        [
+          0.82,
+          "playground/playground/orders.py::Order.status"
+        ],
+        [
+          0.721,
+          "playground/playground/orders.py::OrderLog"
+        ],
+        [
+          0.716,
+          "playground/playground/orders.py::OrderLog.__init__"
+        ],
+        [
+          0.713,
+          "playground/playground/orders.py::OrderLog.__iter__"
+        ],
+        [
+          0.707,
+          "playground/playground/orders.py::OrderLog.__getitem__"
+        ]
+      ],
+      "prompt_chars": 2376,
+      "calls": [
+        {
+          "prompt_tokens": 672,
+          "completion_tokens": 123,
+          "reasoning_tokens": 64,
+          "total_tokens": 795,
+          "seconds": 2.58
+        }
+      ],
+      "status": "written",
+      "code": "def by_status(self, status: OrderStatus) -> Iterator[Order]:\n    \"\"\"Yield orders whose status matches ``status``.\"\"\"\n    for order in list(self._orders):\n        if order.status == status:\n            yield order",
+      "attempts": 1
+    },
+    {
+      "task": "Customer.can_afford",
+      "file": "playground/playground/models.py",
+      "chunks": [
+        [
+          0.814,
+          "playground/playground/models.py::Customer.charge"
+        ],
+        [
+          0.75,
+          "playground/playground/models.py::Customer"
+        ],
+        [
+          0.738,
+          "playground/playground/models.py::Customer.credit_limit"
+        ],
+        [
+          0.709,
+          "playground/playground/models.py::Customer.balance"
+        ],
+        [
+          0.683,
+          "playground/tests/test_models.py::CustomerTests.test_can_afford_accounts_for_existing_balance"
+        ]
+      ],
+      "prompt_chars": 2839,
+      "calls": [
+        {
+          "prompt_tokens": 771,
+          "completion_tokens": 186,
+          "reasoning_tokens": 128,
+          "total_tokens": 957,
+          "seconds": 2.53
+        }
+      ],
+      "status": "written",
+      "code": "def can_afford(self, total: Money) -> bool:\n    \"\"\"Return True if ``balance + total`` does not exceed the credit limit.\"\"\"\n    return (self._balance + total) <= self._credit_limit",
+      "attempts": 1
+    },
+    {
+      "task": "Order.__len__",
+      "file": "playground/playground/orders.py",
+      "chunks": [
+        [
+          0.87,
+          "playground/playground/orders.py::OrderBuilder.__len__"
+        ],
+        [
+          0.759,
+          "playground/playground/orders.py::OrderLog.__len__"
+        ],
+        [
+          0.743,
+          "playground/playground/orders.py::Order.items"
+        ],
+        [
+          0.729,
+          "playground/playground/orders.py::Order.__iter__"
+        ],
+        [
+          0.684,
+          "playground/playground/orders.py::Order.total"
+        ]
+      ],
+      "prompt_chars": 2167,
+      "calls": [
+        {
+          "prompt_tokens": 606,
+          "completion_tokens": 102,
+          "reasoning_tokens": 64,
+          "total_tokens": 708,
+          "seconds": 1.77
+        }
+      ],
+      "status": "written",
+      "code": "def __len__(self) -> int:\n    \"\"\"Return the number of line items.\"\"\"\n    return len(self._items)",
+      "attempts": 1
+    },
+    {
+      "task": "BulkDiscountPricing.price",
+      "file": "playground/playground/pricing.py",
+      "chunks": [
+        [
+          0.797,
+          "playground/playground/pricing.py::BulkDiscountPricing.__repr__"
+        ],
+        [
+          0.773,
+          "playground/playground/pricing.py::BulkDiscountPricing.percent_off"
+        ],
+        [
+          0.762,
+          "playground/playground/pricing.py::BulkDiscountPricing.threshold"
+        ],
+        [
+          0.752,
+          "playground/playground/pricing.py::BulkDiscountPricing"
+        ],
+        [
+          0.724,
+          "playground/playground/pricing.py::BulkDiscountPricing.__init__"
+        ]
+      ],
+      "prompt_chars": 3234,
+      "calls": [
+        {
+          "prompt_tokens": 830,
+          "completion_tokens": 554,
+          "reasoning_tokens": 448,
+          "total_tokens": 1384,
+          "seconds": 5.0
+        }
+      ],
+      "status": "written",
+      "code": "def price(self, items: Sequence[LineItem]) -> Money:\n    \"\"\"Return the base price, less the discount if the quantity qualifies.\"\"\"\n    base_price = self._base.price(items)\n    total_quantity = sum(item.quantity for item in items)\n    if total_quantity >= self._threshold and self._percent_off:\n        discount = (base_price * self._percent_off) // 100\n        return base_price - discount\n    return base_price",
+      "attempts": 1
+    },
+    {
+      "task": "EventBus.__contains__",
+      "file": "playground/playground/events.py",
+      "chunks": [
+        [
+          0.751,
+          "playground/playground/events.py::EventBus.__init__"
+        ],
+        [
+          0.714,
+          "playground/tests/test_events.py::EventBusContainsTests"
+        ],
+        [
+          0.712,
+          "playground/playground/events.py::EventBus.subscribe"
+        ],
+        [
+          0.703,
+          "playground/playground/simulation.py::Simulation.bus"
+        ],
+        [
+          0.688,
+          "playground/tests/test_events.py::EventBusContainsTests.test_contains_non_event_type_is_false"
+        ]
+      ],
+      "prompt_chars": 2785,
+      "calls": [
+        {
+          "prompt_tokens": 728,
+          "completion_tokens": 199,
+          "reasoning_tokens": 128,
+          "total_tokens": 927,
+          "seconds": 2.09
+        }
+      ],
+      "status": "written",
+      "code": "def __contains__(self, event_type: object) -> bool:\n    \"\"\"Return whether any handlers are registered for ``event_type``.\"\"\"\n    if not isinstance(event_type, EventType):\n        return False\n    handlers = self._handlers.get(event_type)\n    return bool(handlers)",
+      "attempts": 1
+    },
+    {
+      "task": "Money.__bool__",
+      "file": "playground/playground/models.py",
+      "chunks": [
+        [
+          0.825,
+          "playground/playground/models.py::Money.__eq__"
+        ],
+        [
+          0.82,
+          "playground/playground/models.py::Money.__le__"
+        ],
+        [
+          0.817,
+          "playground/playground/models.py::Money.__lt__"
+        ],
+        [
+          0.781,
+          "playground/playground/models.py::Money.__mul__"
+        ],
+        [
+          0.776,
+          "playground/tests/test_models.py::MoneyMiscTests.test_bool_false_for_zero"
+        ]
+      ],
+      "prompt_chars": 2628,
+      "calls": [
+        {
+          "prompt_tokens": 720,
+          "completion_tokens": 43,
+          "reasoning_tokens": 0,
+          "total_tokens": 763,
+          "seconds": 1.32
+        }
+      ],
+      "status": "written",
+      "code": "def __bool__(self) -> bool:\n    \"\"\"Return True when the amount is non-zero.\"\"\"\n    return self._cents != 0",
+      "attempts": 1
+    }
+  ]
+}

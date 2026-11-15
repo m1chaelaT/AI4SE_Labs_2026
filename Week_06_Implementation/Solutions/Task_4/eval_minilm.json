@@ -1,0 +1,342 @@
+[
+  {
+    "task": "OrderStatus.is_terminal",
+    "class_hit": true,
+    "test_hit": true,
+    "kinds": [
+      "class",
+      "test",
+      "method",
+      "test",
+      "method"
+    ],
+    "matches": [
+      [
+        0.81,
+        "playground/playground/enums.py::OrderStatus"
+      ],
+      [
+        0.698,
+        "playground/tests/test_enums.py::OrderStatusTests.test_cancelled_is_terminal"
+      ],
+      [
+        0.694,
+        "playground/playground/orders.py::Order.advance"
+      ],
+      [
+        0.687,
+        "playground/tests/test_enums.py::OrderStatusTests.test_new_is_not_terminal"
+      ],
+      [
+        0.672,
+        "playground/playground/orders.py::Order.status"
+      ]
+    ]
+  },
+  {
+    "task": "InventoryLedger.__contains__",
+    "class_hit": true,
+    "test_hit": false,
+    "kinds": [
+      "method",
+      "method",
+      "method",
+      "method",
+      "method"
+    ],
+    "matches": [
+      [
+        0.844,
+        "playground/playground/inventory.py::InventoryLedger.available"
+      ],
+      [
+        0.787,
+        "playground/playground/inventory.py::InventoryLedger.__iter__"
+      ],
+      [
+        0.787,
+        "playground/playground/inventory.py::InventoryLedger._require_sku"
+      ],
+      [
+        0.769,
+        "playground/playground/inventory.py::InventoryLedger.__len__"
+      ],
+      [
+        0.768,
+        "playground/playground/inventory.py::InventoryLedger.release"
+      ]
+    ]
+  },
+  {
+    "task": "Warehouse.stock_report",
+    "class_hit": true,
+    "test_hit": false,
+    "kinds": [
+      "method",
+      "class",
+      "module",
+      "method",
+      "method"
+    ],
+    "matches": [
+      [
+        0.758,
+        "playground/playground/inventory.py::Warehouse.receive"
+      ],
+      [
+        0.713,
+        "playground/playground/inventory.py::Warehouse"
+      ],
+      [
+        0.709,
+        "playground/playground/inventory.py::inventory"
+      ],
+      [
+        0.699,
+        "playground/playground/inventory.py::Warehouse.__repr__"
+      ],
+      [
+        0.68,
+        "playground/playground/inventory.py::InventoryLedger.available"
+      ]
+    ]
+  },
+  {
+    "task": "OrderStateMachine.transition",
+    "class_hit": true,
+    "test_hit": false,
+    "kinds": [
+      "method",
+      "method",
+      "method",
+      "class",
+      "method"
+    ],
+    "matches": [
+      [
+        0.878,
+        "playground/playground/orders.py::OrderStateMachine.can_transition"
+      ],
+      [
+        0.813,
+        "playground/playground/orders.py::Order.advance"
+      ],
+      [
+        0.773,
+        "playground/playground/orders.py::OrderStateMachine.__call__"
+      ],
+      [
+        0.75,
+        "playground/playground/orders.py::OrderStateMachine"
+      ],
+      [
+        0.733,
+        "playground/playground/orders.py::OrderStateMachine.allowed_from"
+      ]
+    ]
+  },
+  {
+    "task": "OrderLog.by_status",
+    "class_hit": true,
+    "test_hit": false,
+    "kinds": [
+      "method",
+      "class",
+      "method",
+      "method",
+      "method"
+    ],
+    "matches": [
+      [
+        0.82,
+        "playground/playground/orders.py::Order.status"
+      ],
+      [
+        0.721,
+        "playground/playground/orders.py::OrderLog"
+      ],
+      [
+        0.716,
+        "playground/playground/orders.py::OrderLog.__init__"
+      ],
+      [
+        0.713,
+        "playground/playground/orders.py::OrderLog.__iter__"
+      ],
+      [
+        0.707,
+        "playground/playground/orders.py::OrderLog.__getitem__"
+      ]
+    ]
+  },
+  {
+    "task": "Customer.can_afford",
+    "class_hit": true,
+    "test_hit": true,
+    "kinds": [
+      "method",
+      "class",
+      "method",
+      "method",
+      "test"
+    ],
+    "matches": [
+      [
+        0.814,
+        "playground/playground/models.py::Customer.charge"
+      ],
+      [
+        0.75,
+        "playground/playground/models.py::Customer"
+      ],
+      [
+        0.738,
+        "playground/playground/models.py::Customer.credit_limit"
+      ],
+      [
+        0.709,
+        "playground/playground/models.py::Customer.balance"
+      ],
+      [
+        0.683,
+        "playground/tests/test_models.py::CustomerTests.test_can_afford_accounts_for_existing_balance"
+      ]
+    ]
+  },
+  {
+    "task": "Order.__len__",
+    "class_hit": true,
+    "test_hit": false,
+    "kinds": [
+      "method",
+      "method",
+      "method",
+      "method",
+      "method"
+    ],
+    "matches": [
+      [
+        0.87,
+        "playground/playground/orders.py::OrderBuilder.__len__"
+      ],
+      [
+        0.759,
+        "playground/playground/orders.py::OrderLog.__len__"
+      ],
+      [
+        0.743,
+        "playground/playground/orders.py::Order.items"
+      ],
+      [
+        0.729,
+        "playground/playground/orders.py::Order.__iter__"
+      ],
+      [
+        0.684,
+        "playground/playground/orders.py::Order.total"
+      ]
+    ]
+  },
+  {
+    "task": "BulkDiscountPricing.price",
+    "class_hit": true,
+    "test_hit": false,
+    "kinds": [
+      "method",
+      "method",
+      "method",
+      "class",
+      "method"
+    ],
+    "matches": [
+      [
+        0.797,
+        "playground/playground/pricing.py::BulkDiscountPricing.__repr__"
+      ],
+      [
+        0.773,
+        "playground/playground/pricing.py::BulkDiscountPricing.percent_off"
+      ],
+      [
+        0.762,
+        "playground/playground/pricing.py::BulkDiscountPricing.threshold"
+      ],
+      [
+        0.752,
+        "playground/playground/pricing.py::BulkDiscountPricing"
+      ],
+      [
+        0.724,
+        "playground/playground/pricing.py::BulkDiscountPricing.__init__"
+      ]
+    ]
+  },
+  {
+    "task": "EventBus.__contains__",
+    "class_hit": true,
+    "test_hit": true,
+    "kinds": [
+      "method",
+      "class",
+      "method",
+      "method",
+      "test"
+    ],
+    "matches": [
+      [
+        0.751,
+        "playground/playground/events.py::EventBus.__init__"
+      ],
+      [
+        0.714,
+        "playground/tests/test_events.py::EventBusContainsTests"
+      ],
+      [
+        0.712,
+        "playground/playground/events.py::EventBus.subscribe"
+      ],
+      [
+        0.703,
+        "playground/playground/simulation.py::Simulation.bus"
+      ],
+      [
+        0.688,
+        "playground/tests/test_events.py::EventBusContainsTests.test_contains_non_event_type_is_false"
+      ]
+    ]
+  },
+  {
+    "task": "Money.__bool__",
+    "class_hit": true,
+    "test_hit": true,
+    "kinds": [
+      "method",
+      "method",
+      "method",
+      "method",
+      "test"
+    ],
+    "matches": [
+      [
+        0.825,
+        "playground/playground/models.py::Money.__eq__"
+      ],
+      [
+        0.82,
+        "playground/playground/models.py::Money.__le__"
+      ],
+      [
+        0.817,
+        "playground/playground/models.py::Money.__lt__"
+      ],
+      [
+        0.781,
+        "playground/playground/models.py::Money.__mul__"
+      ],
+      [
+        0.776,
+        "playground/tests/test_models.py::MoneyMiscTests.test_bool_false_for_zero"
+      ]
+    ]
+  }
+]
